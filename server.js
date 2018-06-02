@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const app = express()
 
 const request = require('request');
+// Apply for apiKey via https://openweathermap.org/api
 const apiKey = '06fca7b66b0842d27f5f977c71eb81e3';
 
 app.use(express.static('public'))
