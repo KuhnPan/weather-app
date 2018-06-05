@@ -2,23 +2,24 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
 const request = require('request');
-
 // Apply for apiKey via https://openweathermap.org/api
 const apiKey = '06fca7b66b0842d27f5f977c71eb81e3';
-
 const https = require("https"),
   fs = require("fs");
-
 // Use Let's encrypt certificate and privkey
 const options = {
   key: fs.readFileSync("/etc/letsencrypt/live/hzjc.tech/privkey.pem"),
   cert: fs.readFileSync("/etc/letsencrypt/live/hzjc.tech/fullchain.pem")
 };
+// Force Https
+const redirectToHTTPS = require('express-http-to-https').redirectToHTTPS
 
 // In order to access css under public directory
 app.use(express.static('public'))
 // To make use of key-value pairs stored on the req-body 
 app.use(bodyParser.urlencoded({ extended: true }));
+// Don't redirect if the hostname is `localhost:port` or the route is `/insecure`
+app.use(redirectToHTTPS([/localhost:(\d{4})/], [/\/insecure/], 301));
 // Use EJS(Embedded JavaScript) templating language 
 app.set('view engine', 'ejs')
 
