@@ -3,23 +3,54 @@
   <head>
     <meta charset="utf-8">
     <title>HZJC Tech.</title>
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <script src="/js/index.js"></script>
   </head>
   <body>
-    <div class="container">
-      <fieldset>
-        <form action="/" method="post">
-          <input name="city" type="text" class="ghost-input" placeholder="Enter a City" required>
-          <input type="submit" class="ghost-button" value="Get Weather">
-        </form>
-	<% if(weather !== null){ %>
-          <p><%= weather %></p>
-        <% } %>
-        <% if(error !== null){ %>
-          <p><%= error %></p>
-        <% } %>
-      </fieldset>
-    </div>
+    <ons-page>
+      <ons-toolbar>
+        <div class="center">怀志敬诚</div>
+      </ons-toolbar>
+    
+      <ons-tabbar swipeable position="auto">
+        <ons-tab page="tab1.html" label="主页" icon="ion-home, material:md-home" badge="7" active>
+        </ons-tab>
+        <ons-tab page="tab2.html" label="设置" icon="md-settings" active-icon="md-face">
+        </ons-tab>
+      </ons-tabbar>
+    </ons-page>
+    
+    <template id="tab1.html">
+      <ons-page id="Tab1">
+        <div style="text-align: center; margin-top: 30px;">
+          <form id="form_1" action="/" method="post">
+            <p>
+              <ons-input name="city" modifier="underbar" placeholder="请输入城市名称" float></ons-input>
+            </p>
+            <p style="margin-top: 30px;">
+              <!--<button type="submit" class="button">查询天气</button>-->
+              <ons-button onclick="queryWeather()">查询天气</ons-button>
+            </p>
+          </form>
+          <% if(weather !== null){ %>
+          <p style="color: green;"><%= weather %></p>
+          <% } %>
+          <% if(error !== null){ %>
+          <p style="color: red;"><%= error %></p>
+          <% } %>
+        </div>
+      </ons-page>
+    </template>
+    
+    <template id="tab2.html">
+      <ons-page id="Tab2">
+        <p style="text-align: center;">
+          设置页面建设中，请稍后！
+        </p>
+      </ons-page>
+    </template>
   </body>
 </html>
