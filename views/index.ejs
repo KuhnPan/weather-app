@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.min.css">
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
     <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <script src="https://unpkg.com/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <script src="/js/index.js"></script>
   </head>
@@ -13,6 +14,9 @@
     <ons-page>
       <ons-toolbar>
         <div class="center">怀志敬诚</div>
+        <div class="right">
+          <ons-toolbar-button onclick="addItem()"><ons-icon icon="fa-plus" spin></ons-icon>新增企业</ons-toolbar-button>
+        </div>
       </ons-toolbar>
     
       <ons-tabbar swipeable position="auto">
@@ -41,15 +45,19 @@
           <% if(error !== null){ %>
           <p style="color: red;"><%= error %></p>
           <% } %>
+          <form id="form_2" action="/read_file" method="post">
+            <p style="margin-top: 30px;">
+              <ons-button onclick="readfile()">充值</ons-button>
+            </p>
+          </form>
         </div>
       </ons-page>
     </template>
     
     <template id="tab2.html">
       <ons-page id="Tab2">
-        <p style="text-align: center;">
-          设置页面建设中，请稍后！
-        </p>
+        <ons-list>
+        </ons-list>
       </ons-page>
     </template>
   </body>

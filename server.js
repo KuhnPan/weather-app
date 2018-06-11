@@ -18,6 +18,7 @@ const redirectToHTTPS = require('express-http-to-https').redirectToHTTPS
 app.use(express.static('public'))
 // To make use of key-value pairs stored on the req-body 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 // Don't redirect if the hostname is `localhost:port` or the route is `/insecure`
 app.use(redirectToHTTPS([/localhost:(\d{4})/], [/\/insecure/], 301));
 // Use EJS(Embedded JavaScript) templating language 
@@ -26,9 +27,14 @@ app.set('view engine', 'ejs')
 app.get('/', function (req, res) {
   res.render('index',{weather: null, error: null})
 })
+app.get('/svc', function (req, res) {
+  res.render('index',{weather: 'svc page', error: null})
+})
+
 
 // Query weather via 3rd part API
 app.post('/', function (req, res) {
+  console.log("/,req.body:"+JSON.stringify(req.body));
   let city = req.body.city;
   let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
   request(url, function (err, response, body) {
@@ -44,6 +50,10 @@ app.post('/', function (req, res) {
       }
     }
   });
+})
+
+app.post('/read_file', function(req, res) {
+   console.log("/read file,req.body:" + JSON.stringify(req.body)); 
 })
 
 // Create HTTP Server
