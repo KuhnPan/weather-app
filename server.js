@@ -25,7 +25,7 @@ app.use(redirectToHTTPS([/localhost:(\d{4})/], [/\/insecure/], 301));
 app.set('view engine', 'ejs')
 
 app.get('/', function (req, res) {
-  res.render('index',{weather: null, error: null})
+  res.render('index2',{weather: null, error: null})
 })
 app.get('/svc', function (req, res) {
   res.render('index',{weather: 'svc page', error: null})

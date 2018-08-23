@@ -8,10 +8,13 @@
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
     <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
     <script src="https://unpkg.com/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/epubjs/dist/epub.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.5/jszip.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <script src="/js/index.js"></script>
     <script src="/js/tab2.js"></script>
     <script src="/js/tab3.js"></script>
+    <script src="/js/tab4.js"></script>
   </head>
   <body>
     <ons-page>
@@ -28,6 +31,8 @@
         <ons-tab page="tab2.html" label="设置" icon="md-settings" active-icon="md-face">
         </ons-tab>
         <ons-tab page="tab3.html" label="地图" icon="ion-compass">
+        </ons-tab>
+        <ons-tab page="tab4.html" label="ebook" icon="ion-compass">
         </ons-tab>
       </ons-tabbar>
     </ons-page>
@@ -74,5 +79,13 @@
         </div>
       </ons-page>
     </template>
+
+    <template id="tab4.html">
+      <ons-page id="Tab4">
+        <div id="area">
+        </div>
+      </ons-page>
+    </template>
+
   </body>
 </html>
