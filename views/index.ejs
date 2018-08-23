@@ -32,7 +32,7 @@
         </ons-tab>
         <ons-tab page="tab3.html" label="地图" icon="ion-compass">
         </ons-tab>
-        <ons-tab page="tab4.html" label="ebook" icon="ion-compass">
+        <ons-tab page="tab4.html" label="读书" icon="book">
         </ons-tab>
       </ons-tabbar>
     </ons-page>
@@ -82,7 +82,11 @@
 
     <template id="tab4.html">
       <ons-page id="Tab4">
-        <div id="area">
+        <div style="text-align: center; margin-top: 30px;" id="area">
+          <p style="margin-top: 30px;">
+            <ons-button onclick="goPre()">上一页</ons-button>
+            <ons-button onclick="goNext()">下一页</ons-button>
+          </p>
         </div>
       </ons-page>
     </template>
