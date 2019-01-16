@@ -1,2 +1,2 @@
 # weather-app
-weather-app is a web app powered by nodejs
+weather-app is a web app powered by nodejs. At the initial stage, it consists of only one feature that simply query the weather all around the world, but for now more and more new features has been provided, i.e GPS locating, EPUB reader and work notes. Our team will continue to work on this production and make the app more better, more easier to use. We really appreciate your feedback!
