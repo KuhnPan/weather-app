@@ -10,6 +10,8 @@
     <script src="https://unpkg.com/jquery/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/epubjs/dist/epub.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.5/jszip.min.js"></script>
+    <script src="https://unpkg.com/docx@4.0.0/build/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <script src="/js/index.js"></script>
     <script src="/js/tab2.js"></script>
@@ -58,6 +60,11 @@
           <form id="form_2" action="/read_file" method="post">
             <p style="margin-top: 30px;">
               <ons-button onclick="readfile()">充值</ons-button>
+            </p>
+          </form>
+          <form id="form_3" action="/pdf2doc" method="get">
+            <p style="margin-top: 30px;">
+              <ons-button onclick="pdf2doc()">转文档</ons-button>
             </p>
           </form>
         </div>

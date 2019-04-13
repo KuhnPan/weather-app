@@ -56,6 +56,15 @@ app.post('/read_file', function(req, res) {
    console.log("/read file,req.body:" + JSON.stringify(req.body)); 
 })
 
+const p2d = require("./tools/p2d")
+app.get("/pdf2doc", async (req, res) => {
+    res.setHeader('Content-Disposition', 'attachment; filename=My Document.docx');
+    console.log(typeof p2d.foo);
+    p2d.foo().then((result) => {
+      res.send(Buffer.from(result, 'base64'));
+    });
+})
+
 // Create HTTP Server
 app.listen(80, function () {
   console.log('Weather app listening on port 80!')

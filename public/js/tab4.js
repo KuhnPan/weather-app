@@ -1,5 +1,5 @@
-var book = ePub("/TangPoem300.epub");
-var rendition = book.renderTo("area", { method: "default", width: "100%", height: "100%" });
+var book = ePub("/epub/TangPoem300.epub");
+var rendition = book.renderTo("area", { flow: "paginated", width: "100%", height: 500 });
 var displayed = rendition.display();
 
 function goPre() {
