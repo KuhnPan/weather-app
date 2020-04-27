@@ -2,14 +2,21 @@
   "name": "weather-app",
   "version": "1.0.0",
   "description": "weather-app desc.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-start": "nodemon app"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://git@github.com:KuhnPan/weather-app.git"
+  },
+  "author": "Kuhn Pan",
   "license": "ISC",
   "dependencies": {
     "ajv": "^6.10.0",
+    "async": "^3.2.0",
+    "axios": "^0.19.2",
     "body-parser": "^1.18.3",
     "docx": "^4.7.1",
     "ejs": "^2.6.1",
@@ -20,7 +27,11 @@
     "mockjs": "^1.1.0",
     "officegen": "^0.5.2",
     "pdfjs-dist": "^2.0.943",
+    "redis": "^3.0.2",
     "request": "^2.87.0",
     "webpack": "^4.29.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
   }
 }
