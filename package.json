@@ -25,6 +25,7 @@
     "extend": "^3.0.2",
     "howler": "^2.1.1",
     "mockjs": "^1.1.0",
+    "mongoose": "^5.9.10",
     "officegen": "^0.5.2",
     "pdfjs-dist": "^2.0.943",
     "redis": "^3.0.2",
